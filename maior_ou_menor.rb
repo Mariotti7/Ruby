@@ -3,7 +3,7 @@ def de_boas_vindas
     puts "Qual é o seu nome?"
     nome = gets 
     puts "\n\n\n"
-    puts "Olá, " + nome
+    puts "Olá, #{nome}"
     puts "Bora começar o jogo?"
 end
 
