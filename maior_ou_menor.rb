@@ -3,7 +3,7 @@ def de_boas_vindas
     puts "Qual é o seu nome?"
     nome = gets 
     puts "\n\n\n"
-    puts "Olá, " + nome
+    puts "Olá, #{nome}"
     puts "Bora começar o jogo?"
 end
 
@@ -16,10 +16,10 @@ end
 
 def pede_um_numero(chances, limite_tentativas)
     puts "\n\n\n"
-    puts "Tentativa #" + chances.to_s + " de " + limite_tentativas.to_s
+    puts "Tentativa #{chances.to_s} de #{limite_tentativas.to_s}"
     puts "Entre com o número"
     chute = gets
-    puts "Será que acertou? Seu chute foi " + chute
+    puts "Será que acertou? Seu chute foi #{chute}" 
     return chute.to_i
 end
 
@@ -28,16 +28,15 @@ def verifica_se_acertou(numero_secreto, chute)
     if acertou
         puts "ACERTOU!"
         return true
-    else
-        maior = chute < numero_secreto
-        if maior
-            puts "O número secreto é maior"
-            return false   
-        else
-            puts "O número secreto é menor"
-            return false 
-        end
     end
+
+    maior = chute < numero_secreto
+    if maior
+        puts "O número secreto é maior"
+    else
+        puts "O número secreto é menor"
+    end
+    false
 end
 
 de_boas_vindas # chama o metodo def == definir
